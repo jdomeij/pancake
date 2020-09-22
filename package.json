@@ -4,6 +4,7 @@
   "description": "Experimental charting library for Svelte",
   "module": "index.mjs",
   "svelte": "index.mjs",
+  "types": "types.d.ts",
   "files": [
     "index.mjs",
     "components",
@@ -30,6 +31,7 @@
   },
   "homepage": "https://github.com/Rich-Harris/pancake#readme",
   "dependencies": {
+    "d3-quadtree": "^2.0.0",
     "yootils": "0.0.16"
   }
 }
