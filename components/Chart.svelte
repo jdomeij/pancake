@@ -9,9 +9,12 @@
 </script>
 
 <script>
-	import { setContext, onDestroy } from 'svelte';
+	import { setContext } from 'svelte';
 	import { writable, derived } from 'svelte/store';
 	import * as yootils from 'yootils';
+
+	let className = '';
+	export {className as class};
 
 	export let x1 = 0;
 	export let y1 = 0;
@@ -77,7 +80,8 @@
 </script>
 
 <div
-	class="pancake-chart"
+	class="pancake-chart ${className}"
+	class:pancake-chart--clip={clip}
 	bind:this={chart}
 	bind:clientWidth={$width}
 	bind:clientHeight={$height}
@@ -96,7 +100,7 @@
 		height: 100%;
 	}
 
-	.clip {
+	.pancake-chart--clip {
 		overflow: hidden;
 	}
 </style>

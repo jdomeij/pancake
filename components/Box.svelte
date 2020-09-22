@@ -22,7 +22,7 @@
 		const width = right - left;
 		const height = bottom - top;
 
-		style = `left: ${left}%; bottom: ${100 - bottom}%; width: ${right - left}%; height: ${height}%;`;
+		style = `left: ${left}%; bottom: ${100 - bottom}%; width: ${width}%; height: ${height}%;`;
 	};
 </script>
 

@@ -30,7 +30,7 @@
 <div class="pancake-grid">
 	{#each _ticks as tick, i}
 		<div class="pancake-grid-item" style={style(tick, i)}>
-			<slot value={tick} first={i === 0} last={i === _ticks.length - 1}></slot>
+			<slot value={tick} index={i} first={i === 0} last={i === _ticks.length - 1}></slot>
 		</div>
 	{/each}
 </div>
