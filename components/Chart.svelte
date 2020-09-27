@@ -80,7 +80,7 @@
 </script>
 
 <div
-	class="pancake-chart ${className}"
+	class="pancake-chart {className}"
 	class:pancake-chart--clip={clip}
 	bind:this={chart}
 	bind:clientWidth={$width}
