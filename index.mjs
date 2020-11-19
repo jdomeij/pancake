@@ -15,11 +15,12 @@ export { default as SvgLine } from './components/SvgLine.svelte';
 export { default as SvgRect } from './components/SvgRect.svelte';
 export { default as SvgScatterplot } from './components/SvgScatterplot.svelte';
 export { default as SvgPoint } from './components/SvgPoint.svelte';
-export { default as SvgPie } from './components/SvgPie.svelte';
+export { default as SvgArc } from './components/SvgArc.svelte';
 
 // Interactivity
 export { default as Quadtree } from './components/Quadtree.svelte';
 
 // helpers
 export { stacks } from './helpers/stacks.mjs';
-export { angleToRadian } from './helpers/angle.mjs';
+export { angleToXY } from './helpers/angle.mjs';
+export { radianToXY } from './helpers/angle.mjs';

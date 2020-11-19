@@ -17,11 +17,18 @@ export type PancakeMouse = {
 export const default_x: PancakeGetVal = (d: any) => d.x;
 export const default_y: PancakeGetVal = (d: any) => d.y;
 
-export function angleToRadian(
+export function angleToXY(
   centerX: number,
   centerY: number,
   radius: number,
   degrees: number
+): PancakePoint;
+
+export function radianToXY(
+  centerX: number,
+  centerY: number,
+  radius: number,
+  angle: number
 ): PancakePoint;
 
 
@@ -110,7 +117,8 @@ export class Quadtree {
     x?: PancakeGetVal,
     y?: PancakeGetVal,
     radius?: number,
-    closest: PancakePoint | null,
+    closest?: PancakePoint | null,
+    maxLevels?: number,
   }
   $$slot_def: {
     closest: PancakePoint | null,
@@ -151,14 +159,14 @@ export class SvgLine {
   }
 }
 
-export class SvgPie {
+export class SvgArc {
   $$prop_def: {
     x?: number,
     y?: number,
-    offset: number,
-    angle: number,
-    cutout?: number,
-    radius?: number,
+    start: number,
+    stop: number,
+    inner?: number,
+    outer?: number,
   }
   $$slot_def: {
     d: number,

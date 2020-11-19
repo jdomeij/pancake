@@ -1,6 +1,6 @@
 {
   "name": "@sveltejs/pancake",
-  "version": "0.0.17",
+  "version": "0.0.17-mod",
   "description": "Experimental charting library for Svelte",
   "module": "index.mjs",
   "svelte": "index.mjs",
@@ -31,7 +31,6 @@
   },
   "homepage": "https://github.com/Rich-Harris/pancake#readme",
   "dependencies": {
-    "d3-quadtree": "^2.0.0",
     "yootils": "0.0.16"
   }
 }
