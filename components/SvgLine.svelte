@@ -8,9 +8,17 @@
 	export let x = default_x;
 	export let y = default_y;
 
-	$: d = 'M' + data
-		.map((d, i) => `${$x_scale(x(d, i))},${$y_scale(y(d, i))}`)
-		.join('L');
+	export let line = svgLine;
+	function svgLine(points) {
+		return 'M' + 
+			points.map(p=>`${p.x},${p.y}`).join('L');
+	}
+
+	$: scaled = data.map((d, i) => ({
+		x:$x_scale(x(d, i)), 
+		y:$y_scale(y(d, i))
+	}));
+	$: d = line(scaled);
 </script>
 
 <slot {d}></slot>

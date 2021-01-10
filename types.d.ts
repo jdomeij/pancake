@@ -4,7 +4,6 @@ export type PancakePoint = {
   x: number;
   y: number;
 };
-export type PancakeGetVal = { (d:any, index?: number): number };
 
 export type PancakeMouse = {
   x: number,
@@ -12,6 +11,8 @@ export type PancakeMouse = {
   left: number,
   top: number,
 };
+
+export type PancakeGetVal = { (d:any, index?: number): number };
 
 // Functions
 export const default_x: PancakeGetVal = (d: any) => d.x;
@@ -136,28 +137,50 @@ export class Svg {
   }
 }
 
+// Convert points to SVG area
+export function SvgAreaFunc(
+  points: PancakePoint[],
+): string;
+
 export class SvgArea {
   $$prop_def: {
     data: any[],
     floor?: number,
     x?: PancakeGetVal,
     y?: PancakeGetVal,
+    area?: SvgAreaFunc,
   }
   $$slot_def: {
     d: number,
   }
 }
 
+// Converts points to SVG line
+export function SvgLineFunc(
+  points: PancakePoint[],
+): string;
+
 export class SvgLine {
   $$prop_def: {
     data: any[],
     x?: PancakeGetVal,
     y?: PancakeGetVal,
+    line?: SvgLineFunc,
   }
   $$slot_def: {
     d: number,
   }
 }
+
+// SVG generator function
+export function SvgArcFunc(
+  x: number, 
+  y: number, 
+  startAngle: number, 
+  endAngle: number, 
+  innerRadius: number, 
+  outerRadius: number,
+): string;
 
 export class SvgArc {
   $$prop_def: {
@@ -167,6 +190,7 @@ export class SvgArc {
     stop: number,
     inner?: number,
     outer?: number,
+    arc?: SvgArcFunc,
   }
   $$slot_def: {
     d: number,

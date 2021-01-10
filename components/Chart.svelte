@@ -87,7 +87,6 @@
 	bind:clientHeight={$height}
 	on:mousemove={handle_mousemove}
 	on:mouseleave={handle_mouseleave}
-	class:clip
 >
 	<slot></slot>
 </div>
